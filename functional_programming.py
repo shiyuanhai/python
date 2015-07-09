@@ -71,3 +71,36 @@ print(sorted(L,key=by_name))
 def by_score(t):
 	return t[1]
 print(sorted(L,key=by_score,reverse=True))
+
+#function as return value
+def lazy_sum(*args):
+	def my_sum():
+		an = 0
+		for n in args:
+			an = an + n
+		return an
+	return my_sum
+f = lazy_sum(1,2,3)
+print(f())
+
+#anonymous function - lambda
+f = lambda x : x * x
+print(f(12))
+
+#Decorator
+def log(func):
+	def wrapper(*args, **kw):
+		print('call %s:' % func.__name__)
+		return func(*args, **kw)
+	return wrapper
+@log
+def now():
+	print('7/8/2015')
+f = now
+f()
+print(f.__name__)
+
+#partial function
+import functools
+int2 = functools.partial(int, base=2)
+print(int2('100'))
