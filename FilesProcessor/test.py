@@ -27,5 +27,10 @@ search_in_folder("2",'type="book"')
 #open("list.txt", "w").write("123\n")
 
 import re
+line = "123"
+x="1"
+y=""
+line = re.sub(r""+re.escape(x),y,line)
+print(line)
 
 print("*" in "123")

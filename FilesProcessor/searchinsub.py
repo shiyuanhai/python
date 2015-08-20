@@ -3,7 +3,7 @@
 
 import sys,os,glob
 
-if len(sys.argv)==2:
+if len(sys.argv)<=2:
 	exit()
 
 currdir = os.getcwd()
